@@ -1,26 +1,28 @@
 .barra-ventana {
- background-color: #0055ea;
- color: #ffffff;
- padding: 6px 12px;
- display: flex;
- justify-content: space-between;
- align-items: center;
- font-family: 'Segoe UI', Tahoma, sans-serif;
- border-bottom: 2px solid #002266;
+    display: flex;
+    background-color: #6366F1;
+    color: #ffffff;
+    padding: 15px 15px;
+    justify-content: space-around;
+    align-items: center;
 }
+
 .titulo-sistema {
- font-weight: bold;
- font-size: 13px;
+    font-weight: bold;
+    font-size: 20px;
 }
+
 .menu-navegacion a {
- color: #ffffff;
- text-decoration: none;
- font-size: 12px;
- margin-left: 10px;
- padding: 2px 8px;
- border: 1px solid transparent;
+    color: #ffffff;
+    padding: 4px 10px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 12px;
+    border: 1px solid transparent;
 }
-.menu-navegacion a.activo, .menu-navegacion a:hover {
- background-color: #003399;
- border: 1px solid #ffffff;
+
+.menu-navegacion a.activo,
+.menu-navegacion a:hover {
+    background-color: #4F46E5;
+    border: 1px solid #ffffff;
 }

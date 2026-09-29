@@ -1,14 +1,27 @@
-.barra-estado {
- background-color: #ece9d8;
- border-top: 1px solid #716f64;
- padding: 4px 10px;
- font-family: 'Segoe UI', Tahoma, sans-serif;
- font-size: 11px;
- color: #000000;
- display: flex;
- justify-content: space-between;
- position: fixed;
- bottom: 0;
- width: 100%;
- box-sizing: border-box;
+.footer {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 13px;
+    color: #F8FAFC;
+    display: flex;
+    background-color: #1E293B;
+    border-top: 1px solid #0F172A;
+    padding: 8px 14px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.footer-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-version {
+    color: #94A3B8;
 }
