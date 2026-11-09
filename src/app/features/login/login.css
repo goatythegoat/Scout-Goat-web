@@ -1,48 +1,74 @@
 .ventana-login {
- width: 300px;
- margin: 60px auto;
- background-color: #ece9d8;
- border: 2px solid #000000;
- font-family: 'Segoe UI', Tahoma, sans-serif;
- box-shadow: 2px 2px 0px #ffffff inset, -2px -2px 0px #716f64 inset;
+  width: 320px;
+  margin: 60px auto;
+  background-color: #3d3d3d;
+  border: 1px solid #4a4a4a;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  color: #fcfcfc;
 }
+
 .cabecera-seccion {
- background-color: #0055ea;
- color: #ffffff;
- padding: 4px 8px;
- font-weight: bold;
- font-size: 12px;
+  background-color: #A9D6C5;
+  color: #2b2b2b;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
 }
+
 .contenido-seccion {
- padding: 15px;
+  padding: 20px;
 }
+
 .fila-campo {
- display: flex;
- justify-content: space-between;
- align-items: center;
- margin-bottom: 10px;
- font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #fcfcfc;
 }
+
 .fila-campo input {
- border: 1px solid #716f64;
- padding: 2px 4px;
- width: 150px;
- background-color: #ffffff;
+  border: 1px solid #4a4a4a;
+  border-radius: 6px;
+  padding: 6px 10px;
+  width: 160px;
+  background-color: #2b2b2b;
+  color: #fcfcfc;
+  outline: none;
+  transition: border-color 0.2s;
 }
+
+.fila-campo input:focus {
+  border-color: #A9D6C5;
+}
+
 .panel-botones {
- display: flex;
- justify-content: flex-end;
- gap: 6px;
- margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
 }
+
 .boton-sistema {
- background-color: #ece9d8;
- border: 1px solid #000000;
- padding: 3px 12px;
- font-size: 11px;
- cursor: pointer;
- box-shadow: 1px 1px 0px #ffffff inset, -1px -1px 0px #716f64 inset;
+  background-color: #A9D6C5;
+  color: #2b2b2b;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
+
+.boton-sistema:hover {
+  background-color: #93c9b6;
+}
+
 .boton-sistema:active {
- box-shadow: -1px -1px 0px #ffffff inset, 1px 1px 0px #716f64 inset;
+  transform: translateY(1px);
 }
