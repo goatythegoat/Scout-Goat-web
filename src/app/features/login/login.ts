@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Header } from './../../shared/components/header/header';
 @Component({
  selector: 'app-login',
  standalone: true,
- imports: [],
+ imports: [Header],
  templateUrl: './login.html',
  styleUrl: './login.css'
 })
