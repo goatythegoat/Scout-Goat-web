@@ -48,6 +48,10 @@
   transform: translateY(-2px);
 }
 
+.titles{
+  text-align: center;
+}
+
 /* Info Apps */
 .programs-wrap {
   display: flex;
@@ -105,6 +109,31 @@
 
 .btn-program:hover {
   background-color: #93c9b6;
+}
+
+.version-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.versions-info {
+  color: #fcfcfc;
+  margin: 0;
+  font-size:1.25rem;
+}
+
+.versions-about {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 2px 0px;
+  padding-left: 7%;
+  border-radius: 4px;
+  margin: 0;
+  font-size:1.25rem;
+  color: #9e9999;
 }
 
 @media (max-width: 1024px) {
