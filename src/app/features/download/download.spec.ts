@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Download } from './download';
+import { DownloadSearch } from './download';
 
-describe('Download', () => {
-  let component: Download;
-  let fixture: ComponentFixture<Download>;
+describe('DownloadSearch', () => {
+  let component: DownloadSearch;
+  let fixture: ComponentFixture<DownloadSearch>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Download],
+      imports: [DownloadSearch],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Download);
+    fixture = TestBed.createComponent(DownloadSearch);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

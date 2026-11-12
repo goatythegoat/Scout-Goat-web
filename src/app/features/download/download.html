@@ -15,74 +15,34 @@
   <div class="programs-wrap">
   </div>
 
-     <div class="search-box">
-      <form method="get" id="search-form">
-         <fieldset>
-            <input type="text" id="search-input" placeholder="Buscar"  />
-            <input class="search-button" type="submit" value="Buscar" />
-            <i class="search-icon"></i>
-         </fieldset>
-      </form>
-      <br>
-   </div>
-
+  <div class="busqueda-descarga">
+    
+    <input type="text" [formControl]="searchControl" placeholder="Buscar descarga..." />
 
   <div class="versions-list">
 
-  <div class="version-row">
+    <div class="version-row">
     <ol class="versions-info">Version</ol>
     <ol class="versions-info">Date</ol>
     <ol class="versions-info">type</ol>
   </div>
 
-  <div class="version-row">
-    <ol class="versions-info">SG windows X64 2.2.0</ol>
-    <ol class="versions-about">14-2-2026</ol>
-    <ol class="versions-about">stable</ol>
-  </div>
+  @for (item of filteredItems; track item.version) {
+    
+      <div class="version-row">
+      <ol class="versions-info">{{ item.Os }} {{ item.version}} {{item.Arch}}</ol>
+      <ol class="versions-about">{{ item.date }}</ol> 
+      <ol class="versions-about">{{ item.type }}</ol>
 
-  <div class="version-row">
-    <ol class="versions-info">SG windows X86 2.2.0</ol>
-    <ol class="versions-about">14-2-2026</ol>
-    <ol class="versions-about">deprecated</ol>
-  </div>
+      </div>
+    
+  } @empty {
+    <li>No se encontraron resultados</li>
+  }
 
-    <div class="version-row">
-    <ol class="versions-info">SG ubuntu X64 2.2.0</ol>
-    <ol class="versions-about">15-2-2026</ol>
-    <ol class="versions-about">stable</ol>
-  </div>
 
-    <div class="version-row">
-    <ol class="versions-info">SG MacOs X64 2.2.0</ol>
-    <ol class="versions-about">25-2-2026</ol>
-    <ol class="versions-about">experimental</ol>
-    </div>
-
-  <div class="version-row">
-    <ol class="versions-info">SG windows X64 2.2.0</ol>
-    <ol class="versions-about">14-2-2026</ol>
-    <ol class="versions-about">stable</ol>
-  </div>
-
-  <div class="version-row">
-    <ol class="versions-info">SG windows X86 2.2.0</ol>
-    <ol class="versions-about">14-2-2026</ol>
-    <ol class="versions-about">deprecated</ol>
-  </div>
-
-    <div class="version-row">
-    <ol class="versions-info">SG ubuntu X64 2.2.0</ol>
-    <ol class="versions-about">15-2-2026</ol>
-    <ol class="versions-about">stable</ol>
-  </div>
-
-    <div class="version-row">
-    <ol class="versions-info">SG MacOs X64 2.2.0</ol>
-    <ol class="versions-about">25-2-2026</ol>
-    <ol class="versions-about">experimental</ol>
-    </div>
 
   </div>
+
   
 </div>
