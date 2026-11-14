@@ -1,0 +1,50 @@
+<div class="programs-container">
+  
+  <div class="programs">
+
+    <div class="titles">
+      <h1>Windows Latest</h1>
+    </div>
+    <button class="btn-sinstaller">Download</button>
+  </div>
+
+
+
+    <hr class="line-divisor">
+    <br>
+  <div class="programs-wrap">
+  </div>
+
+  <div class="busqueda-descarga">
+    
+    <div class="buscador">
+      <input type="text" [formControl]="searchControl" placeholder="Buscar descarga..." />
+    </div>
+
+  <div class="versions-list">
+
+    <div class="version-row">
+    <ol class="versions-info">Version</ol>
+    <ol class="versions-info">Date</ol>
+    <ol class="versions-info">type</ol>
+  </div>
+
+  @for (item of filteredItems; track item.version || item.Arch || item.Os || item.date || item.type) {
+    
+      <div class="version-row">
+      <ol class="versions-info">{{ item.Os }} {{ item.version}} {{item.Arch}}</ol>
+      <ol class="versions-about">{{ item.date }}</ol> 
+      <ol class="versions-about">{{ item.type }}</ol>
+
+      </div>
+    
+  } @empty {
+    <li>No se encontraron resultados</li>
+  }
+
+
+
+  </div>
+
+  
+</div>
