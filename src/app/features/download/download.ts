@@ -9,7 +9,7 @@ import {debounceTime} from 'rxjs';
 @Component({
  selector: 'app-download',
  standalone: true,
- imports: [],
+ imports: [CommonModule, ReactiveFormsModule],
  templateUrl: './download.html',
  styleUrl: './download.css'
 })
