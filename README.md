@@ -47,7 +47,7 @@ Además:
 - Componentes compartidos de **header** y **footer**.
 - Renderizado en servidor (**SSR**) con hidratación del cliente.
 
-## 🛠 Stack tecnológico
+## Stack tecnológico
 
 | Categoría | Tecnología |
 | --- | --- |
