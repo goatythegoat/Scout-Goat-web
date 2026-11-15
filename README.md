@@ -1,59 +1,151 @@
-# MiApp
+<div align="center">
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+# ScoutGoat Web
 
-## Development server
+**Sitio web presentacional del toolkit de ciberseguridad ScoutGoat**
 
-To start a local development server, run:
+![Angular](https://img.shields.io/badge/Angular-22-DD0031?logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![SSR](https://img.shields.io/badge/SSR-Express%205-000000?logo=express&logoColor=white)
+![Estado](https://img.shields.io/badge/estado-en%20desarrollo-yellow)
 
-```bash
-ng serve
+</div>
+
+---
+
+ScoutGoat es una aplicación de escritorio de ciberseguridad que centraliza herramientas de escaneo, análisis de red y auditoría de vulnerabilidades. Este repositorio contiene su **sitio web de presentación**: una SPA hecha con Angular que muestra información de la empresa, permite explorar las versiones descargables del programa y ofrece acceso para usuarios con planes de pago.
+
+> El sitio actualmente es presentacional. Las funciones que incluye (navegación, filtro de descargas, login, FAQ) son de interfaz y no dependen de un backend.
+
+##  Tabla de contenidos
+
+- [Características](#-características)
+- [Stack tecnológico](#-stack-tecnológico)
+- [Estructura del proyecto](#-estructura-del-proyecto)
+- [Instalación y uso](#-instalación-y-uso)
+- [Scripts disponibles](#-scripts-disponibles)
+- [Notas importantes](#-notas-importantes)
+- [Contribución](#-contribución)
+- [Licencia](#-licencia)
+
+##  Características
+
+| Sección | Ruta | Descripción |
+| --- | --- | --- |
+| **Home** | `/home` | Presentación del toolkit: herramientas integradas, rendimiento optimizado y enfoque en la privacidad. |
+| **About us** | `/about` | Información de la empresa, misión y visión. |
+| **Download** | `/download` | Listado de versiones del programa por sistema operativo, arquitectura, fecha y tipo (`stable`, `deprecated`, `nightly`), con **buscador en tiempo real**. |
+| **Sign in** | `/login` | Formulario de acceso pensado para usuarios con planes de pago. |
+| **FAQ** | `/faq` | Preguntas frecuentes sobre planes (Free, Premium, Enterprise), requisitos y protección de datos. |
+
+Además:
+
+- Navegación entre secciones con **Angular Router** y redirección a `/home` para rutas desconocidas.
+- Filtro de descargas reactivo con `FormControl` y `debounceTime(300)`, que busca por versión, sistema operativo, arquitectura, tipo o fecha.
+- Componentes compartidos de **header** y **footer**.
+- Renderizado en servidor (**SSR**) con hidratación del cliente.
+
+## 🛠 Stack tecnológico
+
+| Categoría | Tecnología |
+| --- | --- |
+| Framework | [Angular](https://angular.dev/) 22 (componentes standalone) |
+| Lenguaje | TypeScript 6, HTML5, CSS3 |
+| Programación reactiva | RxJS 7.8 |
+| Servidor SSR | Express 5 + `@angular/ssr` |
+| Pruebas | Vitest + jsdom |
+| Formato de código | Prettier + EditorConfig |
+| Gestor de paquetes | npm |
+
+## Estructura del proyecto
+
+```text
+Scout-Goat-web/
+├── public/                     # Recursos estáticos (logo, imágenes, favicon)
+├── src/
+│   ├── app/
+│   │   ├── features/           # Páginas de la aplicación
+│   │   │   ├── home/
+│   │   │   ├── about/
+│   │   │   ├── download/       # Componente, modelo de datos y datos de versiones
+│   │   │   ├── faq/
+│   │   │   └── login/
+│   │   ├── shared/
+│   │   │   └── components/     # Header y footer reutilizables
+│   │   ├── app.routes.ts       # Definición de rutas
+│   │   ├── app.config.ts       # Configuración de la aplicación
+│   │   └── app.ts / app.html   # Componente raíz
+│   ├── index.html
+│   ├── main.ts                 # Arranque en el navegador
+│   ├── main.server.ts          # Arranque en el servidor
+│   ├── server.ts               # Servidor Express para SSR
+│   └── styles.css              # Estilos globales
+├── angular.json
+├── package.json
+└── tsconfig*.json
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Instalación y uso
 
-## Code scaffolding
+### Requisitos previos
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- [Node.js](https://nodejs.org/) (versión LTS compatible con Angular 22)
+- npm
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Pasos
 
 ```bash
-ng generate --help
+# 1. Clonar el repositorio
+git clone https://github.com/goatythegoat/Scout-Goat-web.git
+cd Scout-Goat-web
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Iniciar el servidor de desarrollo
+npm start
 ```
 
-## Building
+Abre `http://localhost:4200/` en tu navegador. La aplicación se recargará automáticamente al modificar los archivos.
 
-To build the project run:
+### Compilar para producción
 
 ```bash
-ng build
+npm run build
+npm run serve:ssr:mi-app
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+El servidor SSR escucha por defecto en `http://localhost:4000` (configurable con la variable de entorno `PORT`).
 
-## Running unit tests
+## Scripts disponibles
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+| Comando | Descripción |
+| --- | --- |
+| `npm start` | Servidor de desarrollo (`ng serve`). |
+| `npm run build` | Compilación de producción en `dist/`. |
+| `npm run watch` | Compilación en modo observación (desarrollo). |
+| `npm test` | Ejecuta las pruebas unitarias con Vitest. |
+| `npm run serve:ssr:mi-app` | Inicia el servidor SSR a partir del build. |
 
-```bash
-ng test
-```
+También esta actualmente disponible mediante una pagina publicada mediante vercel
+Link:
 
-## Running end-to-end tests
+## Notas importantes
 
-For end-to-end (e2e) testing, run:
+- **Login de demostración:** la validación de credenciales se hace en el cliente con valores fijos y **no es un sistema de autenticación real**. No debe usarse en producción; para ello haría falta un backend con autenticación segura.
+- **Descargas de ejemplo:** el listado de versiones proviene de datos locales (`download.data.ts`) y los botones de descarga aún no están enlazados a instaladores reales.
+- **Imágenes de marcador:** la captura de la interfaz en Home es un placeholder.
 
-```bash
-ng e2e
-```
+## Licencia
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Este proyecto **aún no tiene una licencia definida**.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<div align="center">
+
+Hecho por [goatythegoat](https://github.com/goatythegoat) e [Dudu0702]
+
+</div>
