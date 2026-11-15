@@ -137,6 +137,7 @@ Link:
 - **Login de demostración:** la validación de credenciales se hace en el cliente con valores fijos y **no es un sistema de autenticación real**. No debe usarse en producción; para ello haría falta un backend con autenticación segura.
 - **Descargas de ejemplo:** el listado de versiones proviene de datos locales (`download.data.ts`) y los botones de descarga aún no están enlazados a instaladores reales.
 - **Imágenes de marcador:** la captura de la interfaz en Home es un placeholder.
+- **Idioma:** Como decisión general, la pagina ha sido estructurada usando el ingles como lenguaje principal con la finalidad de llegar a mas usuarios a futuro, esta misma seguira teniendo actualizaciones en conjunto al desarrollo del proyecto, pronto implementaremos opciones para cambiar entre idiomas
 
 ## Licencia
 
