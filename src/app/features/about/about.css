@@ -1,0 +1,131 @@
+.programs-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #2b2b2b;
+  color: #fcfcfc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px 40px 80px 40px;
+  box-sizing: border-box;
+}
+
+.programs {
+  background-color: #3d3d3d;
+  border: 1px solid #4a4a4a;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0 auto 30px auto;
+  border-bottom: 1px solid #4a4a4a;
+  padding-bottom: 20px;
+  width: 20%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.programs h1 {
+  font-size: 28px;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  color: #fcfcfc;
+}
+
+
+
+.explanation {
+  display: flex;
+  align-items: center; 
+  gap: 30px;          
+}
+
+
+.explanation img {
+  max-width: 10 rem;   
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;     
+}
+
+
+.explanation p {
+  margin: 0;
+  color: #b0b0b0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Info Apps */
+.programs-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.program-card {
+  background-color: #3d3d3d;
+  border: 1px solid #4a4a4a;
+  border-radius: 12px;
+  padding: 24px;
+  flex: 1 1 calc(33% - 10px);
+  min-width: 280px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.program-card:hover {
+  transform: translateY(-2px);
+  border-color: #A9D6C5;
+  box-shadow: 0 4px 12px rgba(169, 214, 197, 0.15);
+}
+
+.program-card h2 {
+  font-size: 18px;
+  color: #fcfcfc;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.program-card p {
+  color: #b0b0b0;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+.btn-program {
+  background-color: #A9D6C5;
+  color: #2b2b2b;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+}
+
+.btn-program:hover {
+  background-color: #93c9b6;
+}
+
+@media (max-width: 1024px) {
+  .program-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 650px) {
+  .program-card {
+    flex: 1 1 100%;
+  }
+  
+  /* Opcional: en pantallas pequeñas puedes hacer que se apilen de nuevo verticalmente */
+  .explanation {
+    flex-direction: column;
+  }
+}
