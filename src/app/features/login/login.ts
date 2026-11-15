@@ -23,7 +23,6 @@ export class Login {
       return;
     }
 
-    // Comprobación temporal de credenciales
     if (this.username.trim() === 'admin' && this.password === '1234') {
       this.router.navigate(['/home']);
     } else {
