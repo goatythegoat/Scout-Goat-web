@@ -88,7 +88,7 @@
   border: 1px solid #4a4a4a;
   border-radius: 12px;
   padding: 24px;
-  flex: 1 1 calc(33% - 10px);
+  flex: 1 1 calc(33% - 14px);
   min-width: 280px;
   box-sizing: border-box;
   display: flex;
@@ -148,6 +148,191 @@
   background-color: #3d3d3d;
 }
 
+/* --- NUEVOS ESTILOS INTEGRADOS --- */
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  color: #fcfcfc;
+}
+
+.section-header p {
+  color: #b0b0b0;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Module Badges inside Feature Cards */
+.module-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #A9D6C5;
+  background-color: rgba(169, 214, 197, 0.12);
+  border: 1px solid rgba(169, 214, 197, 0.3);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+/* CLI & Terminal Showcase */
+.cli-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.cli-info {
+  flex: 1 1 350px;
+}
+
+.cli-info h2 {
+  font-size: 24px;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  color: #fcfcfc;
+}
+
+.cli-info p {
+  color: #b0b0b0;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.cli-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cli-list li {
+  color: #fcfcfc;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.cli-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #A9D6C5;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.terminal-box {
+  flex: 1 1 480px;
+  background-color: #1f1f1f;
+  border: 1px solid #4a4a4a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.2s;
+}
+
+.terminal-box:hover {
+  border-color: #A9D6C5;
+}
+
+.terminal-header {
+  background-color: #3d3d3d;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #4a4a4a;
+}
+
+.terminal-header .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #5c5c5c;
+}
+
+.terminal-header .dot:first-child {
+  background-color: #A9D6C5;
+}
+
+.terminal-title {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #b0b0b0;
+  font-family: Consolas, 'Courier New', monospace;
+}
+
+.terminal-body {
+  margin: 0;
+  padding: 18px;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #fcfcfc;
+  overflow-x: auto;
+}
+
+.cmd-prompt {
+  color: #A9D6C5;
+  font-weight: bold;
+}
+
+.cmd-info {
+  color: #b0b0b0;
+}
+
+.cmd-success {
+  color: #A9D6C5;
+}
+
+.cmd-warn {
+  color: #e6c07b;
+}
+
+/* Specs / Footer Bar */
+.specs-bar {
+  background-color: #3d3d3d;
+  border: 1px solid #4a4a4a;
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spec-item strong {
+  font-size: 13px;
+  color: #A9D6C5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.spec-item span {
+  font-size: 14px;
+  color: #fcfcfc;
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
   .programs {
     width: 60%;
@@ -163,5 +348,9 @@
   }
   .feature-card {
     flex: 1 1 100%;
+  }
+  .specs-bar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
