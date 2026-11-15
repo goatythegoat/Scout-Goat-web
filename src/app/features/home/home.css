@@ -1,46 +1,44 @@
+
 .programs-container {
   min-height: 100vh;
   width: 100%;
+  padding: 55px 6% 80px;
+  box-sizing: border-box;
   background-color: #2b2b2b;
   color: #fcfcfc;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 30px 40px 80px 40px;
-  box-sizing: border-box;
 }
 
 .programs {
-  background-color: #3d3d3d;
-  border: 1px solid #4a4a4a;
-  border-radius: 12px;
-  padding: 24px;
-  margin: 0 auto 30px auto;
-  border-bottom: 1px solid #4a4a4a;
-  padding-bottom: 20px;
-  width: 35%;
-  min-width: 320px;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto 45px;
+  padding: 10px 0 10px 22px;
   box-sizing: border-box;
+  border-left: 3px solid #A9D6C5;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  transition: transform 0.2s, border-color 0.2s;
+  text-align: left;
+  transition: border-color 0.25s ease;
 }
 
 .programs:hover {
-  border-color: #A9D6C5;
+  border-left-color: #d0eee2;
 }
 
 .programs h1 {
-  font-size: 28px;
-  margin: 0 0 12px 0;
-  font-weight: 600;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.7px;
   color: #fcfcfc;
+  margin: 0 0 15px;
 }
 
 .programs p {
   color: #b0b0b0;
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 0 0 20px 0;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 12px;
 }
 
 .programs span {
@@ -50,99 +48,214 @@
   color: #b0b0b0;
 }
 
-.btn-installer {
-  background-color: #A9D6C5;
-  color: #2b2b2b;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  align-self: center;
-  transition: background-color 0.2s, transform 0.2s;
-}
-
-.btn-installer:hover {
-  background-color: #93c9b6;
-  transform: translateY(-2px);
-}
-
 .line-divisor {
-  border: 0;
-  border-top: 1px solid #4a4a4a;
-  margin: 20px 0;
   width: 100%;
+  height: 1px;
+  border: none;
+  margin: 45px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #4a4a4a 15%,
+    #4a4a4a 85%,
+    transparent
+  );
 }
 
-/* Info Apps */
 .programs-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: flex-start;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin: 30px 0 45px;
 }
 
 .feature-card {
-  background-color: #3d3d3d;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #414141, #353535);
   border: 1px solid #4a4a4a;
   border-radius: 12px;
-  padding: 24px;
-  flex: 1 1 calc(33% - 14px);
-  min-width: 280px;
+  padding: 27px;
+  min-height: 155px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  justify-content: flex-start;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #A9D6C5;
+  transition: width 0.3s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-5px);
   border-color: #A9D6C5;
-  box-shadow: 0 4px 12px rgba(169, 214, 197, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25),
+              0 0 12px rgba(169, 214, 197, 0.07);
+}
+
+.feature-card:hover::before {
+  width: 100%;
 }
 
 .feature-card h3 {
   font-size: 18px;
+  font-weight: 650;
   color: #fcfcfc;
-  margin: 0 0 12px 0;
-  font-weight: 600;
+  margin: 0 0 14px;
 }
 
 .feature-card p {
-  color: #b0b0b0;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.8;
+  color: #b0b0b0;
   margin: 0;
 }
 
 .image {
-  margin-top: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 55px auto;
+  padding: 30px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: #3d3d3d;
+  border: 1px solid #4a4a4a;
+  border-radius: 16px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.image:hover {
+  border-color: #A9D6C5;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .image h1 {
-  font-size: 28px;
-  margin: 0 0 6px 0;
-  font-weight: 600;
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 700;
   color: #fcfcfc;
+  margin: 0 0 10px;
 }
 
 .image p {
   color: #b0b0b0;
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 0 0 20px 0;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 25px;
 }
 
 .image img {
-  width: 50%;
-  max-height: 550px;
-  object-fit: cover;
-  border-radius: 12px;
+  display: block;
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  background-color: #2b2b2b;
   border: 1px solid #4a4a4a;
-  background-color: #3d3d3d;
+  border-radius: 10px;
+  transition: border-color 0.25s ease;
+}
+
+.image img:hover {
+  border-color: #A9D6C5;
+}
+
+.btn-installer {
+  background-color: #A9D6C5;
+  color: #2b2b2b;
+  border: none;
+  border-radius: 7px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-installer:hover {
+  background-color: #c0e6d8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(169, 214, 197, 0.2);
+}
+
+.btn-installer:focus-visible {
+  outline: 2px solid #A9D6C5;
+  outline-offset: 4px;
+}
+
+@media (max-width: 1000px) {
+  .programs-container {
+    padding: 40px 4% 60px;
+  }
+
+  .programs-wrap {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .programs-container {
+    padding: 30px 18px 50px;
+  }
+
+  .programs {
+    padding-left: 16px;
+    margin-bottom: 30px;
+  }
+
+  .programs h1 {
+    font-size: 24px;
+  }
+
+  .programs p {
+    font-size: 14px;
+  }
+
+  .programs-wrap {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .feature-card {
+    padding: 22px;
+    min-height: auto;
+  }
+
+  .image {
+    padding: 18px;
+    margin: 35px auto;
+  }
+
+  .image img {
+    max-height: 350px;
+  }
+
+  .line-divisor {
+    margin: 30px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .programs,
+  .feature-card,
+  .image,
+  .image img,
+  .btn-installer {
+    transition: none;
+  }
+
+  .feature-card:hover,
+  .btn-installer:hover {
+    transform: none;
+  }
 }
