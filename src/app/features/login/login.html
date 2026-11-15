@@ -1,21 +1,18 @@
-<body>
-<div class="login-window">
- <div class="section-header">Log In</div>
- <div class="section-content">
- <form class="form">
- <div class="field-row">
- <label for="user">User:</label>
- <input type="text" id="user" autocomplete="off" />
- </div>
- <div class="field-row">
- <label for="password">Password:</label>
- <input type="password" id="password" />
- </div>
- <div class="button-panel">
- <button type="button" class="system-button">Accept</button>
- <button type="button" class="system-button">Cancel</button>
- </div>
- </form>
- </div>
+<div class="login-container">
+  <div class="login-window">
+    <div class="section-header">User Authentication</div>
+    <div class="section-content">
+      <form class="login-form" (ngSubmit)="onLogin()" novalidate>
+        <div class="field-row">
+          <label for="username">Username:</label><input type="text" id="username" name="username"[(ngModel)]="username" autocomplete="username" />
+        </div>
+        <div class="field-row"><label for="password">Password:</label><input type="password" id="password"
+            name="password" [(ngModel)]="password" autocomplete="current-password" /></div>
+        <div class="button-panel">
+          <button type="submit" class="system-button">Accept</button>
+          <button type="button" class="system-button" (click)="onCancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
-</body>

@@ -1,44 +1,65 @@
-body{
-  padding-top: 15%;
-  padding-left: 43%;
+:host {
+  display: block;
+  min-height: 100vh;
 }
+
+.login-container {
+  background-color: #2b2b2b;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .login-window {
-  width: 320px;
-  background-color: #3d3d3d;
+  width: 100%;
+  max-width: 580px;
+  background-color: #2b2b2b;
   border: 1px solid #4a4a4a;
-  border-radius: 12px;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   overflow: hidden;
   color: #fcfcfc;
+  box-sizing: border-box;
 }
 
 .section-header {
   background-color: #A9D6C5;
   color: #2b2b2b;
-  padding: 12px 16px;
+  padding: 16px 24px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .section-content {
-  padding: 20px;
+  padding: 32px;
 }
 
 .field-row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
   align-items: center;
-  margin-bottom: 14px;
-  font-size: 13px;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 15px;
   color: #fcfcfc;
 }
 
+.field-row label {
+  font-weight: 500;
+}
+
 .field-row input {
+  width: 100%;
+  box-sizing: border-box;
   border: 1px solid #4a4a4a;
-  border-radius: 6px;
-  padding: 6px 10px;
-  width: 160px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 15px;
   background-color: #2b2b2b;
   color: #fcfcfc;
   outline: none;
@@ -52,26 +73,52 @@ body{
 .button-panel {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
-  margin-top: 20px;
+  gap: 12px;
+  margin-top: 28px;
 }
 
 .system-button {
   background-color: #A9D6C5;
   color: #2b2b2b;
   border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 13px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 .system-button:hover {
   background-color: #93c9b6;
 }
 
+.system-button:focus-visible {
+  outline: 2px solid #fcfcfc;
+  outline-offset: 3px;
+}
+
 .system-button:active {
   transform: translateY(1px);
+}
+
+@media (max-width: 500px) {
+
+  .section-content {
+    padding: 22px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .button-panel {
+    flex-direction: column;
+  }
+
+  .system-button {
+    width: 100%;
+  }
+
 }
